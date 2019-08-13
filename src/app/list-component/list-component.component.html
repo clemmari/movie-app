@@ -1,0 +1,26 @@
+<div class="body">
+  <div class="header">
+    <h1>List of quotes</h1>
+  </div>
+  <div class="list" *ngIf="!noQuotes">
+    <ul class="list-group" *ngIf="quotes.length > 0">
+      <li class="list-group-item disabled kek" *ngFor="let s of quotes">
+        <div class="score">
+          <p>{{ s.score }}</p>
+        </div>
+        <div class="info">
+          <div class="movie">
+            {{ getMovie(s.movie) }}
+          </div>
+          <div class="quote">
+            <p>"{{ s.content }}"</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="list" *ngIf="noQuotes">
+    <p>Can't find any quotes or movies!</p>
+  </div>
+  <div class="footer"></div>
+</div>
